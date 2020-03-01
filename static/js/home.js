@@ -28,17 +28,22 @@ var home = function (_, Kotlin, $module$kotlinx_html_js) {
     $receiver.appendChild(div_0);
   }
   function main$lambda$lambda($receiver) {
-    $receiver.unaryPlus_pdl1vz$('heading');
+    $receiver.unaryPlus_pdl1vz$('In memory of Nancy Tan');
     println('and here');
     return Unit;
   }
   function main$lambda$lambda_0($receiver) {
-    $receiver.unaryPlus_pdl1vz$('and here is text');
+    $receiver.unaryPlus_pdl1vz$('A memorial gathering for Nancy is planned for this Saturday March 7th, at Hyams Beach (near Jervis Bay)');
+    return Unit;
+  }
+  function main$lambda$lambda_1($receiver) {
+    $receiver.unaryPlus_pdl1vz$('>More details and will be added later today as plans are confirmed.  It is planned to be between 2pm and 4pm as this is the best forecast window to avoid rain over the next week.');
     return Unit;
   }
   function main$lambda($receiver) {
     h1($receiver, void 0, main$lambda$lambda);
     p($receiver, void 0, main$lambda$lambda_0);
+    p($receiver, void 0, main$lambda$lambda_1);
     return Unit;
   }
   function main() {
