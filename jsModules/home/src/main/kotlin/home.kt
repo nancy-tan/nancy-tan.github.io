@@ -24,11 +24,14 @@ fun main() {
     println("root is $root")
     root?.newDiv {
         h1 {
-            +"heading"
+            +"In memory of Nancy Tan"
             println("and here")
         }
         p {
-            +"and here is text"
+            +"A memorial gathering for Nancy is planned for this Saturday March 7th, at Hyams Beach (near Jervis Bay)"
+        }
+        p{
+            +">More details and will be added later today as plans are confirmed.  It is planned to be between 2pm and 4pm as this is the best forecast window to avoid rain over the next week."
         }
     }
 }
