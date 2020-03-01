@@ -10,5 +10,5 @@ object Libraries {
 }
 
 object Projects {
-    const val kotlinPressJs = ":jsModules:kotlinPress"
+    const val NancyTanJs = ":jsModules:NancyTan"
 }

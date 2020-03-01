@@ -2,6 +2,7 @@
 /.idea
 /out
 /build
+/build/
 /Server/build
 /Server/out
 /Server/build/
@@ -9,7 +10,7 @@
 /buildSrc/build
 /buildSrc/.gradle
 
-/jsModules/kotlinPress/build
+/jsModules/NancyTan/build
 /jsModules/home/build
 
 *.iml

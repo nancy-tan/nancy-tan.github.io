@@ -31,7 +31,7 @@ tasks {
 
 subprojects {
 
-    val sharedJsName = "kotlinPress"
+    val sharedJsName = "NancyTan"
 
     apply(plugin = "kotlin2js")
 
@@ -49,7 +49,7 @@ subprojects {
 
 
         if (this@subprojects.name.lastName != sharedJsName) {
-            implementation(project(Projects.kotlinPressJs))
+            implementation(project(Projects.NancyTanJs))
         }
     }
 

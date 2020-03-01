@@ -1,7 +1,6 @@
-rootProject.name = "KotlinPress"
+rootProject.name = "NancyTan"
 include(
-    ":Server",
-    "jsModules:kotlinPress",
+    "jsModules:NancyTan",
     "jsModules:home"
 
 )
