@@ -10,12 +10,11 @@ var home = function (_, Kotlin, $module$kotlinx_html_js) {
   var Unit = Kotlin.kotlin.Unit;
   var div = $module$kotlinx_html_js.kotlinx.html.div_59el9d$;
   var println = Kotlin.kotlin.io.println_s8jyv4$;
-  var contains = Kotlin.kotlin.text.contains_li3zpu$;
   var split = Kotlin.kotlin.text.split_ip8yn$;
-  var equals = Kotlin.equals;
+  var drop = Kotlin.kotlin.collections.drop_ba2ldo$;
   var toString = Kotlin.toString;
-  var p = $module$kotlinx_html_js.kotlinx.html.p_8pggrc$;
   var h1 = $module$kotlinx_html_js.kotlinx.html.h1_vmej1w$;
+  var p = $module$kotlinx_html_js.kotlinx.html.p_8pggrc$;
   function newDiv$lambda(closure$code) {
     return function ($receiver) {
       closure$code($receiver);
@@ -34,20 +33,36 @@ var home = function (_, Kotlin, $module$kotlinx_html_js) {
     println('ok running!');
     println('ok running more!');
     var root = document.getElementById('root');
-    var it = document.URL;
-    var url = contains(it, '#') ? split(it, ['#'], void 0, 1).get_za3lpa$(1) : '';
-    if (equals(url, 'family'))
+    var tags = drop(split(document.URL, ['#']), 1);
+    if (tags.contains_11rb$('family'))
       family(root);
     else
       standard(root);
     println('root is ' + toString(root));
   }
   function family$lambda$lambda($receiver) {
-    $receiver.unaryPlus_pdl1vz$('hi family');
+    $receiver.unaryPlus_pdl1vz$('Private Family Goodbye');
+    println('and here');
+    return Unit;
+  }
+  function family$lambda$lambda_0($receiver) {
+    $receiver.unaryPlus_pdl1vz$('Arrive between 11:00am and 11:30 at Hamilton funerals, 1015 Pacific Highway, Pymble');
+    return Unit;
+  }
+  function family$lambda$lambda_1($receiver) {
+    $receiver.unaryPlus_pdl1vz$('Parking should be available on Pacific Hwy.  Following the family time to say goodbye, we can go to a nearby cafe for brunch.');
+    return Unit;
+  }
+  function family$lambda$lambda_2($receiver) {
+    $receiver.unaryPlus_pdl1vz$("The car to take Nancy to the crematorium will then leave at 1:30 to allow Nancy's mother to follow with Stewart.");
+    $receiver.unaryPlus_pdl1vz$('Adam from Hamilton funerals will advise when it is time.');
     return Unit;
   }
   function family$lambda($receiver) {
-    p($receiver, void 0, family$lambda$lambda);
+    h1($receiver, void 0, family$lambda$lambda);
+    p($receiver, void 0, family$lambda$lambda_0);
+    p($receiver, void 0, family$lambda$lambda_1);
+    p($receiver, void 0, family$lambda$lambda_2);
     return Unit;
   }
   function family(root) {
@@ -71,7 +86,15 @@ var home = function (_, Kotlin, $module$kotlinx_html_js) {
     return Unit;
   }
   function standard$lambda$lambda_3($receiver) {
-    $receiver.unaryPlus_pdl1vz$('More details and will be added later today (March 2) as plans are confirmed.  It is planned to be between 2pm and 4pm as this is the best forecast window to avoid rain over the next week.');
+    $receiver.unaryPlus_pdl1vz$('More details and will be added later today (March 2) as plans are confirmed.  It is planned for the memorial gathering to be on the beach, between 2pm and 4pm as this is the best forecast window to avoid rain over the next week.');
+    return Unit;
+  }
+  function standard$lambda$lambda_4($receiver) {
+    $receiver.unaryPlus_pdl1vz$("There will be some 'afternoon tea' food, plus wine or soft drink.");
+    return Unit;
+  }
+  function standard$lambda$lambda_5($receiver) {
+    $receiver.unaryPlus_pdl1vz$('Some of us will have lunch together prior to the memorial and any who wish to join us are welcome.  Location for lunch also to be confirmed.');
     return Unit;
   }
   function standard$lambda($receiver) {
@@ -80,6 +103,8 @@ var home = function (_, Kotlin, $module$kotlinx_html_js) {
     p($receiver, void 0, standard$lambda$lambda_1);
     p($receiver, void 0, standard$lambda$lambda_2);
     p($receiver, void 0, standard$lambda$lambda_3);
+    p($receiver, void 0, standard$lambda$lambda_4);
+    p($receiver, void 0, standard$lambda$lambda_5);
     return Unit;
   }
   function standard(root) {

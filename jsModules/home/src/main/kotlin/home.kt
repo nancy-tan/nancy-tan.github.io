@@ -21,22 +21,31 @@ fun main() {
     println("ok running!")
     println("ok running more!")
     val root: Element? = document.getElementById("root")
-    val url = document.URL.let {
-        if (it.contains("#"))
-            it.split("#", limit = 1)[1]
-        else
-            ""
-    }
-    when (url) {
-        "family" -> family(root)
+    val tags = document.URL.split("#").drop(1)
+
+    when  {
+        "family" in tags -> family(root)
         else -> standard(root)
     }
     println("root is $root")
 }
 fun family(root:Element?){
     root?.newDiv {
+        h1 {
+            +"Private Family Goodbye"
+            println("and here")
+        }
         p{
-            +"hi family"
+            +"Arrive between 11:00am and 11:30 at Hamilton funerals, 1015 Pacific Highway, Pymble"
+        }
+        p {
+            +"Parking should be available on Pacific Hwy.  Following the family time to say goodbye, we can go to a nearby cafe for brunch."
+        }
+        p{
+
+            +"The car to take Nancy to the crematorium will then leave at 1:30 to allow Nancy's mother to follow with Stewart."
+
+            +"Adam from Hamilton funerals will advise when it is time."
         }
     }
 }
@@ -57,7 +66,14 @@ fun standard(root:Element?){
             +"A memorial gathering for Nancy is planned for this Saturday March 7th, at Hyams Beach (near Jervis Bay)"
         }
         p{
-            +"More details and will be added later today (March 2) as plans are confirmed.  It is planned to be between 2pm and 4pm as this is the best forecast window to avoid rain over the next week."
+            +"More details and will be added later today (March 2) as plans are confirmed.  It is planned for the memorial gathering to be on the beach, between 2pm and 4pm as this is the best forecast window to avoid rain over the next week."
+
+        }
+        p{
+            +"There will be some 'afternoon tea' food, plus wine or soft drink."
+        }
+        p{
+            +"Some of us will have lunch together prior to the memorial and any who wish to join us are welcome.  Location for lunch also to be confirmed."
         }
     }
 }
