@@ -10,9 +10,12 @@ var home = function (_, Kotlin, $module$kotlinx_html_js) {
   var Unit = Kotlin.kotlin.Unit;
   var div = $module$kotlinx_html_js.kotlinx.html.div_59el9d$;
   var println = Kotlin.kotlin.io.println_s8jyv4$;
+  var contains = Kotlin.kotlin.text.contains_li3zpu$;
+  var split = Kotlin.kotlin.text.split_ip8yn$;
+  var equals = Kotlin.equals;
   var toString = Kotlin.toString;
-  var h1 = $module$kotlinx_html_js.kotlinx.html.h1_vmej1w$;
   var p = $module$kotlinx_html_js.kotlinx.html.p_8pggrc$;
+  var h1 = $module$kotlinx_html_js.kotlinx.html.h1_vmej1w$;
   function newDiv$lambda(closure$code) {
     return function ($receiver) {
       closure$code($receiver);
@@ -27,34 +30,65 @@ var home = function (_, Kotlin, $module$kotlinx_html_js) {
       $receiver.innerHTML = '';
     $receiver.appendChild(div_0);
   }
-  function main$lambda$lambda($receiver) {
-    $receiver.unaryPlus_pdl1vz$('In memory of Nancy Tan');
-    println('and here');
-    return Unit;
-  }
-  function main$lambda$lambda_0($receiver) {
-    $receiver.unaryPlus_pdl1vz$('A memorial gathering for Nancy is planned for this Saturday March 7th, at Hyams Beach (near Jervis Bay)');
-    return Unit;
-  }
-  function main$lambda$lambda_1($receiver) {
-    $receiver.unaryPlus_pdl1vz$('>More details and will be added later today as plans are confirmed.  It is planned to be between 2pm and 4pm as this is the best forecast window to avoid rain over the next week.');
-    return Unit;
-  }
-  function main$lambda($receiver) {
-    h1($receiver, void 0, main$lambda$lambda);
-    p($receiver, void 0, main$lambda$lambda_0);
-    p($receiver, void 0, main$lambda$lambda_1);
-    return Unit;
-  }
   function main() {
     println('ok running!');
     println('ok running more!');
     var root = document.getElementById('root');
+    var it = document.URL;
+    var url = contains(it, '#') ? split(it, ['#'], void 0, 1).get_za3lpa$(1) : '';
+    if (equals(url, 'family'))
+      family(root);
+    else
+      standard(root);
     println('root is ' + toString(root));
-    root != null ? (newDiv(root, void 0, main$lambda), Unit) : null;
+  }
+  function family$lambda$lambda($receiver) {
+    $receiver.unaryPlus_pdl1vz$('hi family');
+    return Unit;
+  }
+  function family$lambda($receiver) {
+    p($receiver, void 0, family$lambda$lambda);
+    return Unit;
+  }
+  function family(root) {
+    root != null ? (newDiv(root, void 0, family$lambda), Unit) : null;
+  }
+  function standard$lambda$lambda($receiver) {
+    $receiver.unaryPlus_pdl1vz$('In memory of Nancy Tan');
+    println('and here');
+    return Unit;
+  }
+  function standard$lambda$lambda_0($receiver) {
+    $receiver.unaryPlus_pdl1vz$('This is a placeholder web site at this time. More may be added later, but for now there is only updates on plans');
+    return Unit;
+  }
+  function standard$lambda$lambda_1($receiver) {
+    $receiver.unaryPlus_pdl1vz$(' - ');
+    return Unit;
+  }
+  function standard$lambda$lambda_2($receiver) {
+    $receiver.unaryPlus_pdl1vz$('A memorial gathering for Nancy is planned for this Saturday March 7th, at Hyams Beach (near Jervis Bay)');
+    return Unit;
+  }
+  function standard$lambda$lambda_3($receiver) {
+    $receiver.unaryPlus_pdl1vz$('More details and will be added later today (March 2) as plans are confirmed.  It is planned to be between 2pm and 4pm as this is the best forecast window to avoid rain over the next week.');
+    return Unit;
+  }
+  function standard$lambda($receiver) {
+    h1($receiver, void 0, standard$lambda$lambda);
+    p($receiver, void 0, standard$lambda$lambda_0);
+    p($receiver, void 0, standard$lambda$lambda_1);
+    p($receiver, void 0, standard$lambda$lambda_2);
+    p($receiver, void 0, standard$lambda$lambda_3);
+    return Unit;
+  }
+  function standard(root) {
+    root != null ? (newDiv(root, void 0, standard$lambda), Unit) : null;
   }
   _.newDiv_df2v3j$ = newDiv;
   _.main = main;
+  _.family_ejp6n4$ = family;
+  _.standard_ejp6n4$ = standard;
   main();
   Kotlin.defineModule('home', _);
   return _;
