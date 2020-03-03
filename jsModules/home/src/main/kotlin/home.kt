@@ -129,16 +129,23 @@ fun standard(root:Element?, clear: Boolean){
             +" --- "
         }
         p {
-            +"A memorial gathering for Nancy is planned for this Saturday March 7th, at Hyams Beach (near Jervis Bay)"
+            +"A memorial gathering for Nancy will take place this Saturday March 7th, at Hyams Beach (near Jervis Bay)"
         }
         p{
-            +"More details and will be added later today (March 2) as plans are confirmed.  It is planned for the memorial gathering to be on the beach, between 2pm and 4pm as this is the best forecast window to avoid rain over the next week."
+            +"Slides for the memorial will show on this page at the time of the memorial."
         }
         p{
-            +"There will be some 'afternoon tea' food(supplied by you and us), plus wine(BYO) or soft drink(BYO)."
+            +"Update March 4: More details and will be added later today (March 4 or Tomorrow March 5)."
+            +"Plans will need to allow for the weather. It is planned for the memorial gathering to be on the beach, between 2pm and 4pm. "
+            +"The weather is still forecast as this being window to avoid rain, but we will update the exact location on the beach closer to the time. "
+            +"A more overcast day means less distance down the beach for a quiet location, but a greater risk of rain."
         }
         p{
-            +"Some of us will have lunch together prior to the memorial and any who wish to join us are welcome.  Location for lunch also to be confirmed, but current plan is the Huskisson Hotel (contact sharon tai)."
+            +"We will have 'afternoon tea' food, plus some wine or soft drink.  Let organisers know if you plan to bring something to share, but this is not needed as there should be sufficient"
+            +"A is a list of 'who is bringing what' will be available to avoid duplication."
+        }
+        p{
+            +"Some of us will have brunch/lunch together prior to the memorial and any who wish to join us are welcome.  Location for lunch also to be confirmed, but current plan is the Huskisson Hotel (contact sharon tai)."
         }
     }
 }
