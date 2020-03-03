@@ -25,7 +25,8 @@ fun main() {
 
     when  {
         "family" in tags -> family(root)
-        else -> standard(root)
+        "food" in tags -> food(root)
+        else -> standard(root, true)
     }
     println("root is $root")
 }
@@ -48,9 +49,36 @@ fun family(root:Element?){
             +"Adam from Hamilton funerals will advise when it is time."
         }
     }
+    standard(root,false)
 }
-fun standard(root:Element?){
-    root?.newDiv {
+
+fun food(root:Element?){
+    standard(root,true)
+    root?.newDiv(false) {
+        h1 {
+            +"Some people have offered to bring food"
+            println("and here")
+        }
+        h4{
+            +"There will be a big pickup from Costco or somewhere, so individual gestures not needed, but appreciated none the less.  To reduce clashes...here is what is known. "
+
+        }
+        p{em{
+            +"Let Ian or Sophie know, so the list can be shared"
+        }
+
+        }
+        p{
+            +"Erica -- cake, not known what type yet"
+        }
+
+    }
+
+}
+
+fun standard(root:Element?, clear: Boolean){
+    root?.newDiv(clear) {
+
         h1 {
             +"In memory of Nancy Tan"
             println("and here")
@@ -73,7 +101,24 @@ fun standard(root:Element?){
             +"There will be some 'afternoon tea' food, plus wine or soft drink."
         }
         p{
-            +"Some of us will have lunch together prior to the memorial and any who wish to join us are welcome.  Location for lunch also to be confirmed."
+            +"Some of us will have lunch together prior to the memorial and any who wish to join us are welcome.  Location for lunch also to be confirmed, but current plan is the Huskisson Hotel."
         }
     }
 }
+//val theSlides = listOf(
+//    val div{
+//
+//    }
+//)
+fun slides(root:Element?, clear: Boolean){
+    root?.newDiv(clear) {
+        val slides = div{
+
+        }
+//        showSlide(slides, 0)
+    }
+
+
+
+}
+

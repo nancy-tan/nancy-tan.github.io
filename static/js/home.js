@@ -15,6 +15,9 @@ var home = function (_, Kotlin, $module$kotlinx_html_js) {
   var toString = Kotlin.toString;
   var h1 = $module$kotlinx_html_js.kotlinx.html.h1_vmej1w$;
   var p = $module$kotlinx_html_js.kotlinx.html.p_8pggrc$;
+  var h4 = $module$kotlinx_html_js.kotlinx.html.h4_zdyoc7$;
+  var em = $module$kotlinx_html_js.kotlinx.html.em_2lgk3j$;
+  var div_0 = $module$kotlinx_html_js.kotlinx.html.div_ri36nr$;
   function newDiv$lambda(closure$code) {
     return function ($receiver) {
       closure$code($receiver);
@@ -36,8 +39,10 @@ var home = function (_, Kotlin, $module$kotlinx_html_js) {
     var tags = drop(split(document.URL, ['#']), 1);
     if (tags.contains_11rb$('family'))
       family(root);
+    else if (tags.contains_11rb$('food'))
+      food(root);
     else
-      standard(root);
+      standard(root, true);
     println('root is ' + toString(root));
   }
   function family$lambda$lambda($receiver) {
@@ -67,6 +72,39 @@ var home = function (_, Kotlin, $module$kotlinx_html_js) {
   }
   function family(root) {
     root != null ? (newDiv(root, void 0, family$lambda), Unit) : null;
+    standard(root, false);
+  }
+  function food$lambda$lambda($receiver) {
+    $receiver.unaryPlus_pdl1vz$('Some people have offered to bring food');
+    println('and here');
+    return Unit;
+  }
+  function food$lambda$lambda_0($receiver) {
+    $receiver.unaryPlus_pdl1vz$('There will be a big pickup from Costco or somewhere, so individual gestures not needed, but appreciated none the less.  To reduce clashes...here is what is known. ');
+    return Unit;
+  }
+  function food$lambda$lambda$lambda($receiver) {
+    $receiver.unaryPlus_pdl1vz$('Let Ian or Sophie know, so the list can be shared');
+    return Unit;
+  }
+  function food$lambda$lambda_1($receiver) {
+    em($receiver, void 0, food$lambda$lambda$lambda);
+    return Unit;
+  }
+  function food$lambda$lambda_2($receiver) {
+    $receiver.unaryPlus_pdl1vz$('Erica -- cake, not known what type yet');
+    return Unit;
+  }
+  function food$lambda($receiver) {
+    h1($receiver, void 0, food$lambda$lambda);
+    h4($receiver, void 0, food$lambda$lambda_0);
+    p($receiver, void 0, food$lambda$lambda_1);
+    p($receiver, void 0, food$lambda$lambda_2);
+    return Unit;
+  }
+  function food(root) {
+    standard(root, true);
+    root != null ? (newDiv(root, false, food$lambda), Unit) : null;
   }
   function standard$lambda$lambda($receiver) {
     $receiver.unaryPlus_pdl1vz$('In memory of Nancy Tan');
@@ -94,7 +132,7 @@ var home = function (_, Kotlin, $module$kotlinx_html_js) {
     return Unit;
   }
   function standard$lambda$lambda_5($receiver) {
-    $receiver.unaryPlus_pdl1vz$('Some of us will have lunch together prior to the memorial and any who wish to join us are welcome.  Location for lunch also to be confirmed.');
+    $receiver.unaryPlus_pdl1vz$('Some of us will have lunch together prior to the memorial and any who wish to join us are welcome.  Location for lunch also to be confirmed, but current plan is the Huskisson Hotel.');
     return Unit;
   }
   function standard$lambda($receiver) {
@@ -107,13 +145,25 @@ var home = function (_, Kotlin, $module$kotlinx_html_js) {
     p($receiver, void 0, standard$lambda$lambda_5);
     return Unit;
   }
-  function standard(root) {
-    root != null ? (newDiv(root, void 0, standard$lambda), Unit) : null;
+  function standard(root, clear) {
+    root != null ? (newDiv(root, clear, standard$lambda), Unit) : null;
+  }
+  function slides$lambda$lambda($receiver) {
+    return Unit;
+  }
+  function slides$lambda($receiver) {
+    var slides = div_0($receiver, void 0, slides$lambda$lambda);
+    return Unit;
+  }
+  function slides(root, clear) {
+    root != null ? (newDiv(root, clear, slides$lambda), Unit) : null;
   }
   _.newDiv_df2v3j$ = newDiv;
   _.main = main;
   _.family_ejp6n4$ = family;
-  _.standard_ejp6n4$ = standard;
+  _.food_ejp6n4$ = food;
+  _.standard_n5vvvr$ = standard;
+  _.slides_n5vvvr$ = slides;
   main();
   Kotlin.defineModule('home', _);
   return _;
