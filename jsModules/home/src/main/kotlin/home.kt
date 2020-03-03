@@ -137,7 +137,7 @@ fun standard(root:Element?, clear: Boolean){
             +"A more overcast day means less distance down the beach for a quiet location, but a greater risk of rain."
         }
         p{
-            +"We will have 'afternoon tea' food, plus some wine or soft drink.  Let organisers know if you plan to bring something to share, but this is not needed as there should be sufficient"
+            +"We will have 'afternoon tea' together. Some food, plus some wine or soft drink.  Let us know if you plan to bring something to share, but this is not needed as there should be sufficient to share already."
             +"A is a list of 'who is bringing what' will be available to avoid duplication."
         }
         p{
