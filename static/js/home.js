@@ -210,19 +210,27 @@ var home = function (_, Kotlin, $module$kotlinx_html_js) {
     return Unit;
   }
   function standard$lambda$lambda_1($receiver) {
-    $receiver.unaryPlus_pdl1vz$('A memorial gathering for Nancy is planned for this Saturday March 7th, at Hyams Beach (near Jervis Bay)');
+    $receiver.unaryPlus_pdl1vz$('A memorial gathering for Nancy will take place this Saturday March 7th, at Hyams Beach (near Jervis Bay)');
     return Unit;
   }
   function standard$lambda$lambda_2($receiver) {
-    $receiver.unaryPlus_pdl1vz$('More details and will be added later today (March 2) as plans are confirmed.  It is planned for the memorial gathering to be on the beach, between 2pm and 4pm as this is the best forecast window to avoid rain over the next week.');
+    $receiver.unaryPlus_pdl1vz$('Slides for the memorial will show on this page at the time of the memorial.');
     return Unit;
   }
   function standard$lambda$lambda_3($receiver) {
-    $receiver.unaryPlus_pdl1vz$("There will be some 'afternoon tea' food(supplied by you and us), plus wine(BYO) or soft drink(BYO).");
+    $receiver.unaryPlus_pdl1vz$('Update March 4: More details and will be added later today (March 4 or Tomorrow March 5).');
+    $receiver.unaryPlus_pdl1vz$('Plans will need to allow for the weather. It is planned for the memorial gathering to be on the beach, between 2pm and 4pm. ');
+    $receiver.unaryPlus_pdl1vz$('The weather is still forecast as this being window to avoid rain, but we will update the exact location on the beach closer to the time. ');
+    $receiver.unaryPlus_pdl1vz$('A more overcast day means less distance down the beach for a quiet location, but a greater risk of rain.');
     return Unit;
   }
   function standard$lambda$lambda_4($receiver) {
-    $receiver.unaryPlus_pdl1vz$('Some of us will have lunch together prior to the memorial and any who wish to join us are welcome.  Location for lunch also to be confirmed, but current plan is the Huskisson Hotel (contact sharon tai).');
+    $receiver.unaryPlus_pdl1vz$("We will have 'afternoon tea' together. Some food, plus some wine or soft drink.  Let us know if you plan to bring something to share, but this is not needed as there should be sufficient to share already.");
+    $receiver.unaryPlus_pdl1vz$("A is a list of 'who is bringing what' will be available to avoid duplication.");
+    return Unit;
+  }
+  function standard$lambda$lambda_5($receiver) {
+    $receiver.unaryPlus_pdl1vz$('Some of us will have brunch/lunch together prior to the memorial and any who wish to join us are welcome.  Location for lunch also to be confirmed, but current plan is the Huskisson Hotel (contact sharon tai).');
     return Unit;
   }
   function standard$lambda($receiver) {
@@ -232,6 +240,7 @@ var home = function (_, Kotlin, $module$kotlinx_html_js) {
     p($receiver, void 0, standard$lambda$lambda_2);
     p($receiver, void 0, standard$lambda$lambda_3);
     p($receiver, void 0, standard$lambda$lambda_4);
+    p($receiver, void 0, standard$lambda$lambda_5);
     return Unit;
   }
   function standard(root, clear) {
