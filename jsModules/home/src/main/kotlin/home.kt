@@ -1,8 +1,10 @@
 
 import kotlinx.html.*
 import kotlinx.html.dom.create
+import kotlinx.html.js.onClickFunction
 //import nz.salect.objjson.loads
 import org.w3c.dom.Element
+import org.w3c.dom.HTMLDivElement
 import org.w3c.dom.HTMLScriptElement
 import org.w3c.dom.HTMLTitleElement
 import org.w3c.dom.get
@@ -24,12 +26,13 @@ fun main() {
     val tags = document.URL.split("#").drop(1)
 
     when  {
-        "family" in tags -> family(root)
+        //"family" in tags -> family(root)
         "food" in tags -> food(root)
+        "slides" in tags -> slides(root)
         else -> standard(root, true)
     }
-    println("root is $root")
 }
+
 fun family(root:Element?){
     root?.newDiv {
         h1 {
@@ -57,68 +60,87 @@ fun food(root:Element?){
     root?.newDiv(false) {
         h1 {
             +"Some people have offered to bring food"
-            println("and here")
         }
         h4{
-            +"There will be a big pickup from Costco or somewhere, so individual gestures not needed, but appreciated none the less.  To reduce clashes...here is what is known. "
-
+            +"There will be a big pickup from Costco or somewhere, so individual gestures not needed, but appreciated none the less.  To reduce clashes...here is what is known."
         }
-        p{em{
-            +"Let Ian or Sophie know, so the list can be shared"
+        ul {
+            li { +"Erica Rudwick -- cake, not known what type yet" }
         }
-
-        }
-        p{
-            +"Erica -- cake, not known what type yet"
-        }
-
     }
 
+}
+data class Slide(val url:String)
+val theSlides = listOf(
+    Slide("https://cdn.pixabay.com/photo/2015/02/24/15/41/dog-647528__340.jpg"),
+    Slide("https://images.unsplash.com/photo-1494548162494-384bba4ab999?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80")
+)
+fun Element.showSlide(index:Int){
+    this.innerHTML = ""
+    if(this is DIV) {
+        img {
+            src = theSlides[index].url
+        }
+    }
+}
+fun DIV.showSlide(index:Int){
+    if (index != 0)
+        img {
+            src = theSlides[index].url
+        }
+}
+fun slides(root: Element?){
+    root?.newDiv(true){
+        var slideindex = 0
+        h1 {
+            +"the slides"
+        }
+        p {
+            +"slides will disappear in 5mins"
+        }
+        lateinit var sdiv:DIV
+        div {
+            id = "picture"
+            sdiv = this
+        }
+        //val slideDiv: Element? = document.getElementById("picture")
+        sdiv.showSlide(slideindex)
+        br {}
+        button {
+            +"next slide"
+            onClickFunction = {
+                if (slideindex < theSlides.lastIndex) {
+                    slideindex++
+                    sdiv.showSlide(slideindex)
+                } else {
+                    println("outside of list")
+                }
+            }
+        }
+    }
 }
 
 fun standard(root:Element?, clear: Boolean){
     root?.newDiv(clear) {
-
         h1 {
-            +"In memory of Nancy Tan"
-            println("and here")
-        }
-        p {
-
-            +"This is a placeholder web site at this time. More may be added later, but for now there is only updates on plans"
+            +"In loving memory of Nancy Tan"
         }
         p{
-            +" - "
+            +" --- "
         }
         p {
             +"A memorial gathering for Nancy is planned for this Saturday March 7th, at Hyams Beach (near Jervis Bay)"
         }
         p{
             +"More details and will be added later today (March 2) as plans are confirmed.  It is planned for the memorial gathering to be on the beach, between 2pm and 4pm as this is the best forecast window to avoid rain over the next week."
-
         }
         p{
-            +"There will be some 'afternoon tea' food, plus wine or soft drink."
+            +"There will be some 'afternoon tea' food(supplied by you and us), plus wine(BYO) or soft drink(BYO)."
         }
         p{
-            +"Some of us will have lunch together prior to the memorial and any who wish to join us are welcome.  Location for lunch also to be confirmed, but current plan is the Huskisson Hotel."
+            +"Some of us will have lunch together prior to the memorial and any who wish to join us are welcome.  Location for lunch also to be confirmed, but current plan is the Huskisson Hotel (contact sharon tai)."
         }
     }
 }
-//val theSlides = listOf(
-//    val div{
-//
-//    }
-//)
-fun slides(root:Element?, clear: Boolean){
-    root?.newDiv(clear) {
-        val slides = div{
 
-        }
-//        showSlide(slides, 0)
-    }
-
-
-
-}
 
