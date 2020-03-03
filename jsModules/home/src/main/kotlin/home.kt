@@ -1,6 +1,7 @@
 
 import kotlinx.html.*
 import kotlinx.html.dom.create
+import kotlinx.html.js.img
 import kotlinx.html.js.onClickFunction
 //import nz.salect.objjson.loads
 import org.w3c.dom.Element
@@ -77,17 +78,10 @@ val theSlides = listOf(
 )
 fun Element.showSlide(index:Int){
     this.innerHTML = ""
-    if(this is DIV) {
-        img {
-            src = theSlides[index].url
-        }
+    val myimg = document.create.img {
+        src = theSlides[index].url
     }
-}
-fun DIV.showSlide(index:Int){
-    if (index != 0)
-        img {
-            src = theSlides[index].url
-        }
+    this.appendChild(myimg)
 }
 fun slides(root: Element?){
     root?.newDiv(true){
@@ -96,22 +90,24 @@ fun slides(root: Element?){
             +"the slides"
         }
         p {
-            +"slides will disappear in 5mins"
+            +"slides will disappear after saturday unless discussed otherwise"
         }
-        lateinit var sdiv:DIV
         div {
             id = "picture"
-            sdiv = this
+            img {
+                src = theSlides[0].url
+            }
         }
-        //val slideDiv: Element? = document.getElementById("picture")
-        sdiv.showSlide(slideindex)
+
         br {}
         button {
             +"next slide"
             onClickFunction = {
+                val slideDiv: Element? = document.getElementById("picture")
+                println("slideDiv is $slideDiv")
                 if (slideindex < theSlides.lastIndex) {
                     slideindex++
-                    sdiv.showSlide(slideindex)
+                    slideDiv?.showSlide(slideindex)
                 } else {
                     println("outside of list")
                 }
