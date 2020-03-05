@@ -73,8 +73,17 @@ fun food(root:Element?){
 }
 data class Slide(val url:String)
 val theSlides = listOf(
-    Slide("https://cdn.pixabay.com/photo/2015/02/24/15/41/dog-647528__340.jpg"),
-    Slide("https://images.unsplash.com/photo-1494548162494-384bba4ab999?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80")
+    Slide("static/img/Slide1.JPG"),
+    Slide("static/img/Slide2.JPG"),
+    Slide("static/img/Slide3.JPG"),
+    Slide("static/img/Slide4.JPG"),
+    Slide("static/img/Slide5.JPG"),
+    Slide("static/img/Slide6.JPG"),
+    Slide("static/img/Slide7.JPG"),
+    Slide("static/img/Slide8.JPG"),
+    Slide("static/img/Slide9.JPG"),
+    Slide("static/img/Slide10.JPG"),
+    Slide("static/img/Slide11.JPG")
 )
 fun Element.showSlide(index:Int){
     this.innerHTML = ""
@@ -89,19 +98,22 @@ fun slides(root: Element?){
         h1 {
             +"the slides"
         }
-        p {
-            +"slides will disappear after saturday unless discussed otherwise"
-        }
-        div {
-            id = "picture"
-            img {
-                src = theSlides[0].url
-            }
-        }
-
-        br {}
         button {
-            +"next slide"
+            +"Previous Slide"
+            onClickFunction = {
+                val slideDiv: Element? = document.getElementById("picture")
+                println("slideDiv is $slideDiv")
+                if (slideindex <= theSlides.lastIndex) {
+                    slideindex--
+                    slideDiv?.showSlide(slideindex)
+                } else {
+                    println("outside of list")
+                }
+            }
+            id = "button1"
+        }
+        button {
+            +"Next Slide"
             onClickFunction = {
                 val slideDiv: Element? = document.getElementById("picture")
                 println("slideDiv is $slideDiv")
@@ -111,6 +123,17 @@ fun slides(root: Element?){
                 } else {
                     println("outside of list")
                 }
+            }
+            id = "button2"
+        }
+
+        br {  }
+        br {  }
+
+        div {
+            id = "picture"
+            img {
+                src = theSlides[0].url
             }
         }
     }

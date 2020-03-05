@@ -20,14 +20,14 @@ var home = function (_, Kotlin, $module$kotlinx_html_js) {
   var Kind_CLASS = Kotlin.Kind.CLASS;
   var listOf = Kotlin.kotlin.collections.listOf_i5x0yv$;
   var img = $module$kotlinx_html_js.kotlinx.html.js.img_6lw7hj$;
-  var set_id = $module$kotlinx_html_js.kotlinx.html.set_id_ueiko3$;
-  var img_0 = $module$kotlinx_html_js.kotlinx.html.img_evw26v$;
-  var div_0 = $module$kotlinx_html_js.kotlinx.html.div_ri36nr$;
-  var br = $module$kotlinx_html_js.kotlinx.html.br_5bz84p$;
   var toString = Kotlin.toString;
   var get_lastIndex = Kotlin.kotlin.collections.get_lastIndex_55thoc$;
   var set_onClickFunction = $module$kotlinx_html_js.kotlinx.html.js.set_onClickFunction_pszlq2$;
+  var set_id = $module$kotlinx_html_js.kotlinx.html.set_id_ueiko3$;
   var button = $module$kotlinx_html_js.kotlinx.html.button_whohl6$;
+  var br = $module$kotlinx_html_js.kotlinx.html.br_5bz84p$;
+  var img_0 = $module$kotlinx_html_js.kotlinx.html.img_evw26v$;
+  var div_0 = $module$kotlinx_html_js.kotlinx.html.div_ri36nr$;
   function newDiv$lambda(closure$code) {
     return function ($receiver) {
       closure$code($receiver);
@@ -150,21 +150,29 @@ var home = function (_, Kotlin, $module$kotlinx_html_js) {
     $receiver.unaryPlus_pdl1vz$('the slides');
     return Unit;
   }
-  function slides$lambda$lambda_0($receiver) {
-    $receiver.unaryPlus_pdl1vz$('slides will disappear after saturday unless discussed otherwise');
-    return Unit;
+  function slides$lambda$lambda$lambda(closure$slideindex) {
+    return function (it) {
+      var tmp$;
+      var slideDiv = document.getElementById('picture');
+      println('slideDiv is ' + toString(slideDiv));
+      if (closure$slideindex.v <= get_lastIndex(theSlides)) {
+        tmp$ = closure$slideindex.v;
+        closure$slideindex.v = tmp$ - 1 | 0;
+        slideDiv != null ? (showSlide(slideDiv, closure$slideindex.v), Unit) : null;
+      }
+       else {
+        println('outside of list');
+      }
+      return Unit;
+    };
   }
-  function slides$lambda$lambda$lambda($receiver) {
-    $receiver.src = theSlides.get_za3lpa$(0).url;
-    return Unit;
-  }
-  function slides$lambda$lambda_1($receiver) {
-    set_id($receiver, 'picture');
-    img_0($receiver, void 0, void 0, void 0, slides$lambda$lambda$lambda);
-    return Unit;
-  }
-  function slides$lambda$lambda_2($receiver) {
-    return Unit;
+  function slides$lambda$lambda_0(closure$slideindex) {
+    return function ($receiver) {
+      $receiver.unaryPlus_pdl1vz$('Previous Slide');
+      set_onClickFunction($receiver, slides$lambda$lambda$lambda(closure$slideindex));
+      set_id($receiver, 'button1');
+      return Unit;
+    };
   }
   function slides$lambda$lambda$lambda_0(closure$slideindex) {
     return function (it) {
@@ -182,20 +190,37 @@ var home = function (_, Kotlin, $module$kotlinx_html_js) {
       return Unit;
     };
   }
-  function slides$lambda$lambda_3(closure$slideindex) {
+  function slides$lambda$lambda_1(closure$slideindex) {
     return function ($receiver) {
-      $receiver.unaryPlus_pdl1vz$('next slide');
+      $receiver.unaryPlus_pdl1vz$('Next Slide');
       set_onClickFunction($receiver, slides$lambda$lambda$lambda_0(closure$slideindex));
+      set_id($receiver, 'button2');
       return Unit;
     };
+  }
+  function slides$lambda$lambda_2($receiver) {
+    return Unit;
+  }
+  function slides$lambda$lambda_3($receiver) {
+    return Unit;
+  }
+  function slides$lambda$lambda$lambda_1($receiver) {
+    $receiver.src = theSlides.get_za3lpa$(0).url;
+    return Unit;
+  }
+  function slides$lambda$lambda_4($receiver) {
+    set_id($receiver, 'picture');
+    img_0($receiver, void 0, void 0, void 0, slides$lambda$lambda$lambda_1);
+    return Unit;
   }
   function slides$lambda($receiver) {
     var slideindex = {v: 0};
     h1($receiver, void 0, slides$lambda$lambda);
-    p($receiver, void 0, slides$lambda$lambda_0);
-    div_0($receiver, void 0, slides$lambda$lambda_1);
+    button($receiver, void 0, void 0, void 0, void 0, slides$lambda$lambda_0(slideindex));
+    button($receiver, void 0, void 0, void 0, void 0, slides$lambda$lambda_1(slideindex));
     br($receiver, void 0, slides$lambda$lambda_2);
-    button($receiver, void 0, void 0, void 0, void 0, slides$lambda$lambda_3(slideindex));
+    br($receiver, void 0, slides$lambda$lambda_3);
+    div_0($receiver, void 0, slides$lambda$lambda_4);
     return Unit;
   }
   function slides(root) {
@@ -259,7 +284,7 @@ var home = function (_, Kotlin, $module$kotlinx_html_js) {
   _.showSlide_poj3bi$ = showSlide;
   _.slides_ejp6n4$ = slides;
   _.standard_n5vvvr$ = standard;
-  theSlides = listOf([new Slide('https://cdn.pixabay.com/photo/2015/02/24/15/41/dog-647528__340.jpg'), new Slide('https://images.unsplash.com/photo-1494548162494-384bba4ab999?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80')]);
+  theSlides = listOf([new Slide('static/img/Slide1.JPG'), new Slide('static/img/Slide2.JPG'), new Slide('static/img/Slide3.JPG'), new Slide('static/img/Slide4.JPG'), new Slide('static/img/Slide5.JPG'), new Slide('static/img/Slide6.JPG'), new Slide('static/img/Slide7.JPG'), new Slide('static/img/Slide8.JPG'), new Slide('static/img/Slide9.JPG'), new Slide('static/img/Slide10.JPG'), new Slide('static/img/Slide11.JPG')]);
   main();
   Kotlin.defineModule('home', _);
   return _;
