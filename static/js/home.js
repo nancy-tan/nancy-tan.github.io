@@ -164,7 +164,7 @@ var home = function (_, Kotlin, $module$kotlinx_html_js) {
     $receiver.appendChild(myimg);
   }
   function slides$lambda$lambda($receiver) {
-    $receiver.unaryPlus_pdl1vz$('the slides');
+    $receiver.unaryPlus_pdl1vz$("TOW - 'The one where/with'");
     return Unit;
   }
   function slides$lambda$lambda$lambda(closure$slideindex) {
@@ -232,7 +232,7 @@ var home = function (_, Kotlin, $module$kotlinx_html_js) {
   }
   function slides$lambda($receiver) {
     var slideindex = {v: 0};
-    h1($receiver, void 0, slides$lambda$lambda);
+    p($receiver, void 0, slides$lambda$lambda);
     button($receiver, void 0, void 0, void 0, void 0, slides$lambda$lambda_0(slideindex));
     button($receiver, void 0, void 0, void 0, void 0, slides$lambda$lambda_1(slideindex));
     br($receiver, void 0, slides$lambda$lambda_2);
@@ -256,14 +256,13 @@ var home = function (_, Kotlin, $module$kotlinx_html_js) {
     return Unit;
   }
   function standard$lambda$lambda_2($receiver) {
-    $receiver.unaryPlus_pdl1vz$('Slides for the memorial will show on this page at the time of the memorial.');
+    $receiver.unaryPlus_pdl1vz$('Slides for the memorial will show on this page at the time of the memorial. (but instructions will then be below the slides)');
     return Unit;
   }
   function standard$lambda$lambda_3($receiver) {
-    $receiver.unaryPlus_pdl1vz$("Update March 6: Weather looks 'ok' - but we will check logistics and put a final update in the morning. Hopefully on Hyams beach, close to the access point will be ok.");
-    $receiver.unaryPlus_pdl1vz$('It is planned for the memorial gathering to be on the beach, between 2pm and 4pm. ');
-    $receiver.unaryPlus_pdl1vz$('The weather is still forecast as this being window to avoid rain, but we will update the exact location on the beach closer to the time. ');
-    $receiver.unaryPlus_pdl1vz$('A more overcast day means less distance down the beach for a quiet location, but a greater risk of rain.');
+    $receiver.unaryPlus_pdl1vz$('We are in a house at the corner of Bayview Ave and Cyrus St (diagonally opposite the Seamans Beach carpark)');
+    $receiver.unaryPlus_pdl1vz$('Provided wind and rain or a large group deciding to set up just before us edoes not interfere, we will gather on the beach near the Seamans Beach Carpark');
+    $receiver.unaryPlus_pdl1vz$('Someone will be at the house if plans are interupted');
     return Unit;
   }
   function standard$lambda$lambda_4($receiver) {

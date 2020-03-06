@@ -113,8 +113,8 @@ fun Element.showSlide(index:Int){
 fun slides(root: Element?){
     root?.newDiv(true){
         var slideindex = 0
-        h1 {
-            +"the slides"
+        p{
+            +"TOW - 'The one where/with'"
         }
         button {
             +"Previous Slide"
@@ -169,13 +169,12 @@ fun standard(root:Element?, clear: Boolean){
             +"A memorial gathering for Nancy will take place this Saturday March 7th, at Hyams Beach (near Jervis Bay)"
         }
         p{
-            +"Slides for the memorial will show on this page at the time of the memorial."
+            +"Slides for the memorial will show on this page at the time of the memorial. (but instructions will then be below the slides)"
         }
         p{
-            +"Update March 6: Weather looks 'ok' - but we will check logistics and put a final update in the morning. Hopefully on Hyams beach, close to the access point will be ok."
-            +"It is planned for the memorial gathering to be on the beach, between 2pm and 4pm. "
-            +"The weather is still forecast as this being window to avoid rain, but we will update the exact location on the beach closer to the time. "
-            +"A more overcast day means less distance down the beach for a quiet location, but a greater risk of rain."
+            +"We are in a house at the corner of Bayview Ave and Cyrus St (diagonally opposite the Seamans Beach carpark)"
+            +"Provided wind and rain or a large group deciding to set up just before us edoes not interfere, we will gather on the beach near the Seamans Beach Carpark"
+            +"Someone will be at the house if plans are interupted"
         }
         p{
             +"We will have 'afternoon tea' together. Some food, plus some wine or soft drink.  Let us know if you also plan to bring something to share,"
