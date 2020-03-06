@@ -42,6 +42,19 @@ var home = function (_, Kotlin, $module$kotlinx_html_js) {
       $receiver.innerHTML = '';
     $receiver.appendChild(div_0);
   }
+  function get_time($receiver) {
+    return Kotlin.Long.fromNumber($receiver.getTime());
+  }
+  function get_str($receiver) {
+    return ' ' + $receiver.getMonth() + ' ' + $receiver.getDate() + '  ' + $receiver.getHours() + ' ' + $receiver.getMinutes();
+  }
+  function isNow() {
+    var now = get_time(new Date());
+    var nowDate = new Date(now);
+    var startDate = new Date(2020, 2, 7, 14);
+    var endDate = new Date(2020, 2, 7, 17);
+    return now.toNumber() > startDate.getTime() && now.toNumber() < endDate.getTime();
+  }
   function main() {
     println('ok running!');
     println('ok running more!');
@@ -51,7 +64,11 @@ var home = function (_, Kotlin, $module$kotlinx_html_js) {
       food(root);
     else if (tags.contains_11rb$('slides'))
       slides(root);
-    else
+    else if (isNow()) {
+      slides(root);
+      standard(root, false);
+    }
+     else
       standard(root, true);
   }
   function family$lambda$lambda($receiver) {
@@ -155,7 +172,7 @@ var home = function (_, Kotlin, $module$kotlinx_html_js) {
       var tmp$;
       var slideDiv = document.getElementById('picture');
       println('slideDiv is ' + toString(slideDiv));
-      if (closure$slideindex.v <= get_lastIndex(theSlides)) {
+      if (closure$slideindex.v <= get_lastIndex(theSlides) && closure$slideindex.v > 0) {
         tmp$ = closure$slideindex.v;
         closure$slideindex.v = tmp$ - 1 | 0;
         slideDiv != null ? (showSlide(slideDiv, closure$slideindex.v), Unit) : null;
@@ -243,14 +260,15 @@ var home = function (_, Kotlin, $module$kotlinx_html_js) {
     return Unit;
   }
   function standard$lambda$lambda_3($receiver) {
-    $receiver.unaryPlus_pdl1vz$('Update March 4: More details and will be added later today (March 4 or Tomorrow March 5).');
-    $receiver.unaryPlus_pdl1vz$('Plans will need to allow for the weather. It is planned for the memorial gathering to be on the beach, between 2pm and 4pm. ');
+    $receiver.unaryPlus_pdl1vz$("Update March 6: Weather looks 'ok' - but we will check logistics and put a final update in the morning. Hopefully on Hyams beach, close to the access point will be ok.");
+    $receiver.unaryPlus_pdl1vz$('It is planned for the memorial gathering to be on the beach, between 2pm and 4pm. ');
     $receiver.unaryPlus_pdl1vz$('The weather is still forecast as this being window to avoid rain, but we will update the exact location on the beach closer to the time. ');
     $receiver.unaryPlus_pdl1vz$('A more overcast day means less distance down the beach for a quiet location, but a greater risk of rain.');
     return Unit;
   }
   function standard$lambda$lambda_4($receiver) {
-    $receiver.unaryPlus_pdl1vz$("We will have 'afternoon tea' together. Some food, plus some wine or soft drink.  Let us know if you plan to bring something to share, but this is not needed as there should be sufficient to share already.");
+    $receiver.unaryPlus_pdl1vz$("We will have 'afternoon tea' together. Some food, plus some wine or soft drink.  Let us know if you also plan to bring something to share,");
+    $receiver.unaryPlus_pdl1vz$('but this is not needed as there should be more than sufficient to share already.');
     $receiver.unaryPlus_pdl1vz$("A is a list of 'who is bringing what' will be available to avoid duplication.");
     return Unit;
   }
@@ -272,6 +290,9 @@ var home = function (_, Kotlin, $module$kotlinx_html_js) {
     root != null ? (newDiv(root, clear, standard$lambda), Unit) : null;
   }
   _.newDiv_df2v3j$ = newDiv;
+  _.get_time_t5kl13$ = get_time;
+  _.get_str_t5kl13$ = get_str;
+  _.isNow = isNow;
   _.main = main;
   _.family_ejp6n4$ = family;
   _.food_ejp6n4$ = food;

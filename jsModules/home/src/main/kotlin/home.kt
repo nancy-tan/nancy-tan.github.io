@@ -10,6 +10,7 @@ import org.w3c.dom.HTMLScriptElement
 import org.w3c.dom.HTMLTitleElement
 import org.w3c.dom.get
 import kotlin.browser.document
+import kotlin.js.Date
 
 fun Element.newDiv(clear: Boolean = true, code: DIV.() -> Unit) {
 
@@ -18,6 +19,19 @@ fun Element.newDiv(clear: Boolean = true, code: DIV.() -> Unit) {
     }
     if (clear) this.innerHTML = ""
     this.appendChild(div)
+}
+val Date.time get() = getTime().toLong()
+val Date.str get()= " ${this.getMonth()} ${this.getDate()}  ${this.getHours()} ${this.getMinutes()}"
+fun isNow():Boolean{
+    val now = Date().time
+    val nowDate = Date(now)
+    val startDate = Date(2020,2,7,14)
+    val endDate = Date(2020,2,7,17)
+//    println("dateN  ${nowDate.str}")
+//    println("dateS  ${nowDate.str}")
+//    println("dateE  ${nowDate.str}")
+//    println("start ${now> startDate.getTime()} end ${now< endDate.getTime()}")
+  return (now> startDate.getTime())&&(now< endDate.getTime())
 }
 
 fun main() {
@@ -30,6 +44,10 @@ fun main() {
         //"family" in tags -> family(root)
         "food" in tags -> food(root)
         "slides" in tags -> slides(root)
+        isNow() -> {
+            slides(root)
+            standard(root, false)
+        }
         else -> standard(root, true)
     }
 }
@@ -103,7 +121,7 @@ fun slides(root: Element?){
             onClickFunction = {
                 val slideDiv: Element? = document.getElementById("picture")
                 println("slideDiv is $slideDiv")
-                if (slideindex <= theSlides.lastIndex) {
+                if (slideindex <= theSlides.lastIndex && slideindex > 0) {
                     slideindex--
                     slideDiv?.showSlide(slideindex)
                 } else {
@@ -154,13 +172,14 @@ fun standard(root:Element?, clear: Boolean){
             +"Slides for the memorial will show on this page at the time of the memorial."
         }
         p{
-            +"Update March 4: More details and will be added later today (March 4 or Tomorrow March 5)."
-            +"Plans will need to allow for the weather. It is planned for the memorial gathering to be on the beach, between 2pm and 4pm. "
+            +"Update March 6: Weather looks 'ok' - but we will check logistics and put a final update in the morning. Hopefully on Hyams beach, close to the access point will be ok."
+            +"It is planned for the memorial gathering to be on the beach, between 2pm and 4pm. "
             +"The weather is still forecast as this being window to avoid rain, but we will update the exact location on the beach closer to the time. "
             +"A more overcast day means less distance down the beach for a quiet location, but a greater risk of rain."
         }
         p{
-            +"We will have 'afternoon tea' together. Some food, plus some wine or soft drink.  Let us know if you plan to bring something to share, but this is not needed as there should be sufficient to share already."
+            +"We will have 'afternoon tea' together. Some food, plus some wine or soft drink.  Let us know if you also plan to bring something to share,"
+            +"but this is not needed as there should be more than sufficient to share already."
             +"A is a list of 'who is bringing what' will be available to avoid duplication."
         }
         p{

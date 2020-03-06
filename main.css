@@ -32,3 +32,8 @@ button {
   background-color: #008CBA;
   color: white;
 }
+
+img {
+    height: 500px;
+    width: 850px;
+}
