@@ -182,7 +182,8 @@ fun standard(root:Element?, clear: Boolean){
             +"A is a list of 'who is bringing what' will be available to avoid duplication."
         }
         p{
-            +"Some of us will have brunch/lunch together prior to the memorial and any who wish to join us are welcome.  Location for lunch also to be confirmed, but current plan is the Huskisson Hotel (contact sharon tai)."
+            +"Some of us will have brunch/lunch together prior to the memorial and any who wish to join us are welcome.  "
+            +"Brunch/lunch is booked at Huskisson Hotel (booking for 11.45am - under the name Sharon Waldron)."
         }
     }
 }

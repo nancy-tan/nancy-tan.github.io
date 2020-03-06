@@ -272,7 +272,8 @@ var home = function (_, Kotlin, $module$kotlinx_html_js) {
     return Unit;
   }
   function standard$lambda$lambda_5($receiver) {
-    $receiver.unaryPlus_pdl1vz$('Some of us will have brunch/lunch together prior to the memorial and any who wish to join us are welcome.  Location for lunch also to be confirmed, but current plan is the Huskisson Hotel (contact sharon tai).');
+    $receiver.unaryPlus_pdl1vz$('Some of us will have brunch/lunch together prior to the memorial and any who wish to join us are welcome.  ');
+    $receiver.unaryPlus_pdl1vz$('Brunch/lunch is booked at Huskisson Hotel (booking for 11.45am - under the name Sharon Waldron).');
     return Unit;
   }
   function standard$lambda($receiver) {
